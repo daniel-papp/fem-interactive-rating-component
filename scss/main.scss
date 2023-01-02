@@ -1,0 +1,145 @@
+@use './config' as c;
+@use './reset';
+
+:root {
+    font-size: 12px;
+}
+
+html {
+    font-family: c.$ff-main;
+}
+
+// * {
+    // border: solid 2px red;
+// }
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: c.$clr-background;
+}
+
+.card {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 25px;
+    background-color: c.$clr-main;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+
+    &.left-align {
+        align-self: flex-start;
+    }
+
+    .star-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: lighten(c.$clr-main, 5%);
+
+        .star-icon {
+            height: 14px;
+        }
+    }
+
+    .rating-text {
+        color: c.$clr-primary;
+        background-color: lighten(c.$clr-main, 5%);
+        padding: 7px 15px 5px 15px;
+        border-radius: 15px;
+    }
+}
+
+.text {
+
+    h1 {
+        color: c.$clr-white;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: c.$clr-light-text;
+    }
+
+    &.center-align {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            text-align: center;
+        }
+    }
+
+}
+
+.rating-area {
+    width: 100%;
+
+    .rating-list {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: lighten(c.$clr-main, 5%);
+            color: c.$clr-light-text;
+            padding-top: 2px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: c.$clr-primary;
+                color: c.$clr-white;
+            }
+
+            &.active {
+                background-color: c.$clr-light-text;
+                color: c.$clr-white;
+
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+        height: 40px;
+        border: none;
+        background-color: c.$clr-primary;
+        color: c.$clr-white;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-weight: 700;
+        border-radius: 40px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: c.$clr-white;
+            color: c.$clr-primary;
+        }
+    }
+
+}
